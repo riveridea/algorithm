@@ -28,7 +28,9 @@ int get_max_value(int n, int W, int* weights, int* values){
 		}
 	}
 
-	return f[(n+1)*(W+1) - 1]; //pay attention to the index
+	std::free(f);
+	int rt = f[(n+1)*(W+1) - 1];
+	return rt; //pay attention to the index
 }
 
 
