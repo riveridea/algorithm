@@ -21,7 +21,7 @@ int changemaking(int* d, int n, int m){
 	int i;
 	for(i=1 ; i<=n; i++){
 		temp = 65535;
-        int j;
+		int j;
 		for(j=0; j<m; j++){
 			if(i >= d[j]){
 				//std::cerr << "temp:" << temp << "f[" << i << "- d["<< j << "]]:" << f[i-d[j]] << std::endl;

@@ -35,16 +35,26 @@ void heapify(int *array, unsigned int index, unsigned int heap_size){
 }
 
 void build_heap(int *array, unsigned int heap_size){
-        int index = (heap_size - 1)/2;
+        int index = (heap_size - 1)>>1;
         
         while(index >= 0) heapify(array, index--, heap_size); 
+}
+
+void heapsort(int *array, unsigned int heap_size){
+	build_heap(array, heap_size);
+        
+	while(heap_size > 1){
+		swap(&array[0], &array[heap_size-1]);
+		heapify(array, 0, --heap_size);	
+ 	}
 }
 
 int main(void) {
 	puts("HeapSort - Intro to algorithms");
 
 	int array[10] = {8, 3, 19, 2, 6, 12, 17, 9, 7, 4};
-	build_heap(array, 10);
-        puts("Done");
+	//build_heap(array, 10);
+	heapsort(array, 10);
+	puts("Done");
 	return EXIT_SUCCESS;
 }
