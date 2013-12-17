@@ -3,10 +3,10 @@
 #include <string>
 
 using namespace std;
+//HARD See notes and recite the code
 /*
 	Given n, generate all structurelly unique BST's that store all values in [1,n]
 */
-
 
 
 /**
