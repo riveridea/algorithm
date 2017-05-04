@@ -5,12 +5,6 @@
 #include <list>
 using namespace std;
 
-typedef struct adjList
-{
-    int value;
-    vector<int> adj_nodes;
-}adj_list;
-
 class graph
 {
     //dynamic graph, no of vertices will grow when new edges are added
@@ -21,10 +15,9 @@ class graph
     vector<pair<int, int>> edges;
 
     //representation of adjacent lists
-    vector<adj_list> adj_lists;
+    //by unordered_set of container
+    vector<unordered_set<int>> adj_lists;
 
-protected:
-    int edges_2_adj_lists();
 
 public:
     //constructor
@@ -35,12 +28,14 @@ public:
     ~graph();
 
     //add edge the graph
-    void add_edge_only(int u, int v);
-    void add_edge_update(int u, int v);
+    void add_edge(int u, int v);
 
     //detect the cycle for graph
     bool find_cycle();
 
     //topological sorting for the graph
     bool tsort();
+    
+    //make graph from edges
+    vector<unordered_set<int>> make_graph_from_edges();
 }

@@ -7,12 +7,12 @@ template<class T>
 void inorder_traversal(shared_ptr<BinaryTree<T>> n){
 	while(n){
 		if(n->left){
-                	shared_ptr<BinaryTree<T>> pre = n->left;
-                        while(pre->right && pre->right != n){
-                        	pre = pre->right;
-                        }
+        	shared_ptr<BinaryTree<T>> pre = n->left;
+            while(pre->right && pre->right != n){
+				pre = pre->right;
+            }
                         
-                        if(pre->right){  //pre->right == n
+            if(pre->right){  //pre->right == n
 				pre->right = nullptr;
 				cout << n->data;
 				n = n->right;			
@@ -21,7 +21,7 @@ void inorder_traversal(shared_ptr<BinaryTree<T>> n){
 				pre->right = n;
 				n = n->left;
 			}
-                }
+        }
 		else{
 			cout << n->data;
 			n = n->right; 		

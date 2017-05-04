@@ -13,16 +13,11 @@ graph::graph
     //TODO will release the resources 
 }
 
-void graph::add_edge_only(int u, int v)
+void graph::add_edge(int u, int v)
 {
     //TODO update the edges only
     //adjacent list will be update once we want to convert
     //the edges to adjacnet list
-}
-
-void graph::add_edge_update(int u, int v)
-{
-    //TODO update the edges and also the adjacent lists 
 }
 
 bool graph::find_cycle()
@@ -35,12 +30,17 @@ bool graph::tsort()
     //TODO topological sort if no cycle is found 
 }
 
+vector<unordered_set<int>> 
+grpah::make_graph_from_edges()
+{
+
+}
+
 //test code
 int main()
 {
     graph g;
-
+    graph.make_graph_from_edges();
     //g.add_edge
-    
     return 0;
 }
