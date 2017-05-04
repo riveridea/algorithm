@@ -5,28 +5,28 @@ using namespace std;
 
 template<class T>
 void inorder_traversal(shared_ptr<BinaryTree<T>> n){
-	while(n){
-		if(n->left){
-        	shared_ptr<BinaryTree<T>> pre = n->left;
-            while(pre->right && pre->right != n){
-				pre = pre->right;
-            }
+    while(n){
+	if(n->left){
+	    shared_ptr<BinaryTree<T>> pre = n->left;
+	    while(pre->right && pre->right != n){
+		pre = pre->right;
+	    }
                         
-            if(pre->right){  //pre->right == n
-				pre->right = nullptr;
-				cout << n->data;
-				n = n->right;			
-			}
-			else{ //pre->right != n
-				pre->right = n;
-				n = n->left;
-			}
-        }
-		else{
-			cout << n->data;
-			n = n->right; 		
-		}	
+	    if(pre->right){  //pre->right == n
+	        pre->right = nullptr;
+	        cout << n->data;
+	        n = n->right;			
+	    }
+	    else{ //pre->right != n
+	        pre->right = n;
+	        n = n->left;
+	    }
 	}
+	else{
+	    cout << n->data;
+	    n = n->right; 		
+	}	
+    }
 }
 
 int main(int argc, char *argv[]) {
