@@ -17,7 +17,7 @@ int reach(vector<vector<int> > &adj, int x, int y) {
   return result;
 }
 
-bool dfs_reach(vector<vector<int> > &adj, int x, int y, vector<bool> &visited)
+bool dfs_reach(vector<vector<int> > &adj, int x, int y, vector<bool> &visited) 
 {
     visited[x] = true;
 
