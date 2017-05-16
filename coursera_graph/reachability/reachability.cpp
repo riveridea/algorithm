@@ -17,7 +17,7 @@ int reach(vector<vector<int> > &adj, int x, int y) {
   return result;
 }
 
-bool dfs_reach(vector<vector<int> > &adj, int x, int y, vector<bool> &visited)
+bool dfs_reach(vector<vector<int> > &adj, int x, int y, vector<bool> &visited) 
 {
     visited[x] = true;
 
@@ -26,14 +26,14 @@ bool dfs_reach(vector<vector<int> > &adj, int x, int y, vector<bool> &visited)
 		    itr != adj[x].end(); itr++)   
     {
     	if (visited[*itr] == false)
-		{
-	    	//check if we found y
-	    	if((*itr == y) || dfs_reach(adj, *itr, y, visited))
-				return true;
-		}
+	{
+	    //check if we found y
+	    if((*itr == y) || dfs_reach(adj, *itr, y, visited))
+			return true;
+	}
     }
     
-	return false;
+    return false;
 }
 
 int main() {

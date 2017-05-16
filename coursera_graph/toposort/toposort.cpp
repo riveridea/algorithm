@@ -6,14 +6,32 @@ using std::vector;
 using std::pair;
 
 void dfs(vector<vector<int> > &adj, vector<int> &used, vector<int> &order, int x) {
-  //write your code here
+    //write your code here
+    //use a stack to store the post order list
+    used[x] = 1;
+    for(vector<int>::iterator itr = adj[x].begin();
+            itr != adj[x].end();
+            itr ++)
+    {
+	if(!used[*itr]) dfs(adj, used, order, *itr);
+    }
+
+    //post order
+    order.insert(order.begin(), x);
 }     
 
 vector<int> toposort(vector<vector<int> > adj) {
-  vector<int> used(adj.size(), 0);
-  vector<int> order;
-  //write your code here
-  return order;
+    vector<int> used(adj.size(), 0);
+    vector<int> order;
+    //write your code here
+    for(int i=0; i<adj.size(); i++)
+    {
+	if(!used[i])
+	{
+	    dfs(adj, used, order, i);   
+	}	    
+    }
+    return order;
 }
 
 int main() {
