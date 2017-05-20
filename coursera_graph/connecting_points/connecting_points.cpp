@@ -60,6 +60,7 @@ double minimum_distance(vector<int> x, vector<int> y) {
 	pair<int, int> vertex(x[i], y[i]);
 	vertices.push_back(vertex);	
     }
+    vector<int> parent(sizex, -1);
 
     //make graph
     vector<edge> graph;
@@ -86,6 +87,27 @@ double minimum_distance(vector<int> x, vector<int> y) {
     {
 	cout << "(" << itr->line.first << "," << itr->line.second << ")";
 	cout << "distance: " << itr->cost <<endl;
+    }
+
+    //now let us do the real work
+    //add each edge as non-decreasing order, if this new edge is not causing
+    //cycle. use the find and union algorithm
+    for(vector<edge>::iterator itr = graph.begin();
+			       itr != graph.end();
+			       itr++)
+    {
+	//find the set for each endpoint of the edge
+	int u = itr->line.first;
+	int v = itr->line.second;
+	int uset = find(parent, u);
+	int vset = find(parent, v);
+	if(uset != vset)
+	{
+	    //union the two points to the same set
+	    Union(parent, u, v);
+	    //add the edge, we just need the cost
+	    result += itr->cost;
+	}
     }
 
     return result;
