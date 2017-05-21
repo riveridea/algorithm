@@ -23,7 +23,7 @@ int find(vector<int> parent, int i)
 	return find(parent, parent[i]);
 }
 
-void Union(vector<int> parent, int x, int y)
+void Union(vector<int> &parent, int x, int y)
 {
     int xset = find(parent, x);
     int yset = find(parent, y);
@@ -75,8 +75,8 @@ double minimum_distance(vector<int> x, vector<int> y) {
 	    e.line = line;
 	    e.cost = cost;
 	    graph.push_back(e); 
-	    cout << "(" << j << "," << k << ")";
-	    cout << "distance: " << e.cost <<endl;
+	    //cout << "(" << j << "," << k << ")";
+	    //cout << "distance: " << e.cost <<endl;
 	}
     }
     //sort the edges
@@ -85,8 +85,8 @@ double minimum_distance(vector<int> x, vector<int> y) {
 			       itr != graph.end();
 			       itr++)
     {
-	cout << "(" << itr->line.first << "," << itr->line.second << ")";
-	cout << "distance: " << itr->cost <<endl;
+	//cout << "(" << itr->line.first << "," << itr->line.second << ")";
+	//cout << "distance: " << itr->cost <<endl;
     }
 
     //now let us do the real work
