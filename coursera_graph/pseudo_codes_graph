@@ -1,0 +1,21 @@
+BFS
+===
+BFS(G, s)
+  for each vertex u in G.V - {s}
+    u.color = WHITE
+    u.d = INF
+    u.pi = NIL
+    
+  s.color = GRAY
+  s.d = 0
+  s.pi = NIL
+  Q = Empty
+  Enqueue(Q, s)
+  while Q != Empty
+    u = Dequeue(Q)
+    for each v in G.Adj[u]
+      v.color = GRAY
+      v.d = u.d + 1
+      v.pi = u
+      Enqueue(Q, v)
+    u.color = BLACK
