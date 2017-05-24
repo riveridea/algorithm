@@ -19,3 +19,10 @@ BFS(G, s)
       v.pi = u
       Enqueue(Q, v)
     u.color = BLACK
+
+
+DFS
+===
+1. Recursive 
+------------
+
