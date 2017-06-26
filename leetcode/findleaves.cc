@@ -29,17 +29,25 @@ public:
         while(!s.empty())
         {
             TreeNode* curr = s.top();
-	    cout << curr->val << endl;
+	    cout << " start processing stack top " <<  curr->val << endl;
             TreeNode* left = curr->left, *right = curr->right;
             if(left || right)
             {
                 //parent
                 parents.push(curr);
-		cout << " push " << curr->val << " to parents" << endl;
-                if(left) s.push(left);
-                if(right) s.push(right);
-                
                 s.pop();
+		cout << " push " << curr->val << " to parents" << endl;
+                if(left)
+		{
+		    s.push(left);
+		    cout << " - push left : " << left->val << endl;
+		}                 
+		if(right)
+		{
+		    s.push(right);
+		    cout << " - push right: " << right->val << endl;
+		}
+                
             }
             else
             {
@@ -52,24 +60,28 @@ public:
 		if(!parent) break;
                 if(curr == parent->left)
                 {
+		    cout << " curr leaf is " << parent->val << "'s left child " << endl;
                     parent->left = NULL;
                 }
                 else
                 {
+		    cout << " curr leaf is " << parent->val << "'s right child " << endl;
                     parent->right = NULL;
                 }
                 each_result.push_back(curr->val);
 		s.pop();
+		delete curr;
                 //determine parent lost all children
                 if(!parent->left && !parent->right)
                     parents.pop();
             }
           
 	    if(!s.empty()) 
-		cout << s.top()->val << endl; 
+		cout << "after processig, stack top is " << s.top()->val << endl; 
             if(s.empty())
             {
                 //output the each result
+		cout << "one round end \n";
                 result.push_back(each_result);
                 if(!parents.empty())
                 {
@@ -98,20 +110,30 @@ int main()
 	TreeNode *curr = new TreeNode(array[i]);
 	if(i == 0) root = curr;
 	TreeNode *left = NULL, *right = NULL;
+	cout << curr->val << " ";
 	if(i*2 + 1 < array.size())
 	{
 	    left = new TreeNode(array[i*2+1]);
+
+	    cout << (left?left->val:0) << " ";
 	    curr->left = left; 
 	}
 	if(i*2 + 2 < array.size())
 	{
 	    right = new TreeNode(array[i*2 + 2]);
+	    cout << (right?right->val:0);
 	    curr->right = right;
 	}
-	cout << curr->val << " ";
-	cout << (left?left->val:0) << " ";
-	cout << (right?right->val:0) << endl;
+	cout << endl;
     }
+    
+    cout << " root is " << root->val << endl;
+    cout << " root left is " << root->left->val << endl;
+    TreeNode *left = root->left;
+    if (left->left)
+	cout << " child of left is " << left->left->val << endl;
+    else
+	cout << " chile of left is NULL" << endl;
 
     Solution s;
     vector<vector<int>> leaves = s.findLeaves(root);
