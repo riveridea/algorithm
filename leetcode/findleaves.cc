@@ -47,17 +47,22 @@ public:
 		    s.push(right);
 		    cout << " - push right: " << right->val << endl;
 		}
-                
             }
             else
             {
                 //find leave
+		if(parents.empty())
+		{
+		    //reach the root
+		    vector<int> final(curr->val, 1);
+		    result.push_back(final);
+		    break;
+		}
                 TreeNode* parent = parents.top();
+		s.pop();
 		cout << " parent = " << parent->val << " ";
 		cout << " leaf = " << curr->val << endl;
 
-                //delete the leaf
-		if(!parent) break;
                 if(curr == parent->left)
                 {
 		    cout << " curr leaf is " << parent->val << "'s left child " << endl;
@@ -69,8 +74,7 @@ public:
                     parent->right = NULL;
                 }
                 each_result.push_back(curr->val);
-		s.pop();
-		delete curr;
+		//delete curr;
                 //determine parent lost all children
                 if(!parent->left && !parent->right)
                     parents.pop();
@@ -83,15 +87,25 @@ public:
                 //output the each result
 		cout << "one round end \n";
                 result.push_back(each_result);
+		cout << "[";
+		for(auto each : each_result)
+		{
+		    cout << each;
+		}
+		cout << "]" << endl;
+		each_result.clear();
                 if(!parents.empty())
                 {
-                    s.push(parents.top());
+		    TreeNode *nextPar = parents.top();
+		    cout << "next parent restarted " << nextPar->val << endl;
+                    s.push(nextPar);
                     parents.pop();
                 }
-                else
-                {
-                    return result;
-                }
+		else
+		{
+		    vector<int> final(root->val, 1);
+		    result.push_back(final);
+		}
             }
         }
 
@@ -102,35 +116,38 @@ public:
 int main()
 {
     //build tree 
-    vector<int> array = {1, 2, 3, 4, 5};
-    TreeNode *root = NULL;
+    vector<int> array = {1};
+    vector<TreeNode> tree;
+    for(int i = 0; i < array.size(); i++)
+    {
+	tree.push_back(TreeNode(0));
+    }
+    TreeNode *root =  &tree[0];
 
     for(int i = 0; i < array.size(); i++)
     {
-	TreeNode *curr = new TreeNode(array[i]);
-	if(i == 0) root = curr;
-	TreeNode *left = NULL, *right = NULL;
+	TreeNode *curr = &tree[i];
+	curr->val = array[i];
 	cout << curr->val << " ";
 	if(i*2 + 1 < array.size())
 	{
-	    left = new TreeNode(array[i*2+1]);
-
-	    cout << (left?left->val:0) << " ";
-	    curr->left = left; 
+	    curr->left = &tree[i*2 + 1]; 
+	    curr->left->val = array[i*2 + 1];
 	}
 	if(i*2 + 2 < array.size())
 	{
-	    right = new TreeNode(array[i*2 + 2]);
-	    cout << (right?right->val:0);
-	    curr->right = right;
+	    curr->right = &tree[i*2 + 2]; 
+	    curr->right->val = array[i*2 + 2];
 	}
-	cout << endl;
     }
     
     cout << " root is " << root->val << endl;
-    cout << " root left is " << root->left->val << endl;
+    if(root->left)
+	cout << " root left is " << root->left->val << endl;
+    if(root->right)
+	cout << " root right is " << root->right->val << endl;
     TreeNode *left = root->left;
-    if (left->left)
+    if (left && left->left)
 	cout << " child of left is " << left->left->val << endl;
     else
 	cout << " chile of left is NULL" << endl;
@@ -142,7 +159,7 @@ int main()
         cout << "[ ";
 	for(auto each_element : each_result)
 	{
-	    cout << each_element << endl;
+	    cout << each_element;
 	}
 	cout << " ]" << endl;
     }
