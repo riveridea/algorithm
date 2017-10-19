@@ -129,7 +129,7 @@ public:
 int main()
 {
     Solution s;
-    vector<string> result = s.letterCombinations("999");
+    vector<string> result = s.letterCombinations("999999");
     for(auto ans : result)
     {
 	cout << "[" << ans << "]" << endl;
