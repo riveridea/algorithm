@@ -8,6 +8,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <iostream>
+
+using namespace std;
 
 void swap(int* a, int* b){
 	*a = *a ^ *b;
@@ -29,8 +32,8 @@ void heapify(int *array, unsigned int index, unsigned int heap_size){
 		largest = r;
 
 	if (largest != index){
-		swap(&array[largest], &array[index]);
-        heapify(array, largest, heap_size);
+	    swap(&array[largest], &array[index]);
+	    heapify(array, largest, heap_size);
 	}
 }
 
@@ -45,6 +48,31 @@ int main(void) {
 
 	int array[10] = {8, 3, 19, 2, 6, 12, 17, 9, 7, 4};
 	build_heap(array, 10);
+	for(auto n : array)
+	{
+	    cout << n << endl;
+	}
+	cout << "heap sorting" << endl;
+	//extract the maximum one by one from the heap
+	for(int i = 9; i >0; i--)
+	{
+	    cout << "[";
+	    for(auto n : array)
+	    {
+		cout << n << " ";
+	    }
+	    cout << "]" << endl;
+	    //move the largest(current root) to the end 
+	    swap(&array[i], &array[0]);
+	    
+	    //heapify the rest of elements
+	    heapify(array, 0, i);
+	}
+
+	for(auto n : array)
+	{
+	    cout << n << endl;
+	}
 	puts("Done");
 	return EXIT_SUCCESS;
 }
