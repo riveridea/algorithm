@@ -1,0 +1,92 @@
+
+#
+Title
+Acceptance
+Difficulty
+Frequency
+344Reverse String59.5%String59Easy
+13Roman to Integer46.6%Integer46Easy
+6ZigZag Conversion26.9%Conversion26Medium
+14Longest Common Prefix31.5%Prefix31Easy
+344ReverseLongest Substring Without Repeating Characters24.5%Characters24Medium
+12Integer to Roman45.4%Roman45Medium
+20Valid Parentheses33.6%Parentheses33Easy
+5Longest Palindromic Substring25.3%Substring25Medium
+151Reverse Words in a String59Easy15.7%String59Easy15Medium
+38Count and Say35.4%Say35Easy
+10Regular Expression Matching24.2%Matching24Hard
+17Letter Combinations of a Phone Number35.2%Number35Medium
+67Add Binary33.1%Binary33Easy
+22Generate Parentheses33Easy46.1%Parentheses33Easy46Medium
+49Group Anagrams36.1%Anagrams36Medium
+8String to Integer (atoi)atoi14.0%atoi14Medium
+28Implement strStr()strStr28.5%strStr28Easy
+72Edit Distance32.0%Distance32Hard
+657Judge Route Circle68.4%Circle68Easy
+273Integer to English Words22.4%Words22Hard
+383Ransom Note47.5%Note47Easy
+336Palindrome Pairs26.5%Pairs26Hard
+43Multiply Strings27.5%Strings27Medium
+345Reverse Vowels of a Strings27Medium38.7%Strings27Medium38Easy
+115Distinct Subsequences31.8%Subsequences31Hard
+557Reverse Words in a String III59.6%III59Easy
+125Valid Palindrome26.5%Palindrome26Easy
+657JudgeValid Number35Medium12.8%Number35Medium12Hard
+76Minimum Window Substring25Medium26.0%Substring25Medium26Hard
+165Compare Version Numbers20.4%Numbers20Medium
+214Shortest Palindrome26Easy24.6%Palindrome26Easy24Hard
+91Decode Ways19.9%Ways19Medium
+32Longest Valid Parentheses33Easy46Medium23.1%Parentheses33Easy46Medium23Hard
+58Length of Last Words31.9%Words31Easy
+30Substring with Concatenation of All Words31Easy22.1%Words31Easy22Hard
+93Restore IP Addresses27.7%Addresses27Medium
+97Interleaving String24.8%String24Hard
+44Wildcard Matching24Hard20.5%Matching24Hard20Hard
+87Scramble String24Hard29.4%String24Hard29Hard
+71Simplify Path25.7%Path25Medium
+227Basic Calculator III59Easy29.5%III59Easy29Medium
+647Palindromic Substrings55.7%Substrings55Medium
+126Word Ladder III59Easy29Medium14.4%III59Easy29Medium14Hard
+68Text Justification19.5%Justification19Hard
+161One Edit Distance 	31.5%31Medium
+340Longest Substring with At Most K Distinct Characters 	39.1%39Hard
+681Next Closest Time43.0%Time43Medium
+632Smallest Range41.8%Range41Hard
+609Find Duplicate File in System52.6%System52Medium
+157Read N Characters Given Read4 	29.1%29Easy
+606Construct String from Binary Tree49.7%Tree49Easy
+159Longest Substring with At Most Two Distinct Characters 	41.7%41Hard
+158Read N Characters Given Read4 II - Call multiple times 	24.5%24Hard
+541Reverse String II43.7%II43Easy
+521Longest Uncommon Subsequence II43Easy55.8%II43Easy55Easy
+385Mini Parser30.7%Parser30Medium
+249Group Shifted Strings 	42.4%42Medium
+459Repeated Substring Pattern38.1%Pattern38Easy
+564Find the Closest Palindrome26Easy24Hard17.4%Palindrome26Easy24Hard17Hard
+186Reverse Words in a String II 	27.3%27Medium
+696Count Binary Substrings55Medium52.0%Substrings55Medium52Easy
+520Detect Capital51.9%Capital51Easy
+271Encode and Decode Strings 	26.2%26Medium
+537Complex Number Multiplication63.9%Multiplication63Medium
+583Delete Operation for Two Strings44.0%Strings44Medium
+678Valid Parenthesis Strings44Medium28.6%Strings44Medium28Medium
+553Optimal Division55.1%Division55Medium
+434Number of Segments in a Strings44Medium28Medium36.6%Strings44Medium28Medium36Easy
+293Flip Game 	56.4%56Easy
+680Valid Palindrome II31.9%II31Easy
+686Repeated String Matching24Hard20Hard31.7%Matching24Hard20Hard31Easy
+539Minimum Time Difference45.8%Difference45Medium
+468Validate IP Addresses27Medium20.8%Addresses27Medium20Medium
+635Design Log Storage System 	48.6%48Medium
+551Student Attendance Record IP44.1%IP44Easy
+556Next Greater Element III59Easy29Medium14Hard28.9%III59Easy29Medium14Hard28Medium
+522Longest Uncommon Subsequence III59Easy29Medium14Hard28Medium31.8%III59Easy29Medium14Hard28Medium31Medium
+544Output Contest Matches 	70.9%70Medium
+616Add Bold Tag in String 	38.6%38Medium
+536Construct Binary Tree from String 	42.6%42Medium
+555Split Concatenated Strings 	36.7%36Medium
+408Valid Word Abbreviation 	28.1%28Easy
+591Tag Validator29.9%Validator29Hard
+443String Compression37.7%Compression37Easy
+527Word Abbreviation 	42.1%42Hard
+

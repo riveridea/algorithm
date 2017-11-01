@@ -1,0 +1,82 @@
+Tree
+#
+Title
+Acceptance
+Difficulty
+Frequency
+104Maximum Depth of Binary Tree53.2%Tree53Easy
+226Invert Binary Tree53Easy52.3%Tree53Easy52Easy
+617Merge Two Binary Trees67.7%Trees67Easy
+100Same Trees67Easy46.9%Trees67Easy46Easy
+173Binary Search Tree Iterator42.2%Iterator42Medium
+96Unique Binary Search Trees67Easy46Easy41.4%Trees67Easy46Easy41Medium
+235Lowest Common Ancestor of a Binary Search Trees67Easy46Easy41Medium39.4%Trees67Easy46Easy41Medium39Easy
+110Balanced Binary Trees67Easy46Easy41Medium39Easy37.8%Trees67Easy46Easy41Medium39Easy37Easy
+108Convert Sorted Array to Binary Search Trees67Easy46Easy41Medium39Easy37Easy42.6%Trees67Easy46Easy41Medium39Easy37Easy42Easy
+124Binary Tree Maximum Path Sum26.5%Sum26Hard
+236Lowest Common Ancestor of a Binary Tree30.0%Tree30Medium
+101Symmetric Tree30Medium39.3%Tree30Medium39Easy
+116Populating Next Right Pointers in Each Node36.9%Node36Medium
+297Serialize and Deserialize Binary Tree30Medium39Easy33.9%Tree30Medium39Easy33Hard
+105Construct Binary Tree from Preorder and Inorder Traversal32.7%Traversal32Medium
+102Binary Tree Level Order Traversal32Medium40.7%Traversal32Medium40Medium
+99Recover Binary Search Tree30.2%Tree30Hard
+112Path Sum26Hard34.3%Sum26Hard34Easy
+222Count Complete Tree Nodes27.6%Nodes27Medium
+257Binary Tree Paths39.5%Paths39Easy
+114Flatten Binary Tree to Linked List35.6%List35Medium
+230Kth Smallest Element in a BST44.3%BST44Medium
+669Trim a Binary Search Tree58.1%Tree58Easy
+199Binary Tree Right Side View41.5%View41Medium
+111Minimum Depth of Binary Tree33.3%Tree33Easy
+95Unique Binary Search Trees II31.7%II31Medium
+337House Robber III44.0%III44Medium
+94Binary Tree Inorder Traversal32Medium40Medium47.6%Traversal32Medium40Medium47Medium
+144Binary Tree Preorder Traversal32Medium40Medium47Medium45.6%Traversal32Medium40Medium47Medium45Medium
+107Binary Tree Level Order Traversal III44Medium40.9%III44Medium40Easy
+250Count Univalue Subtrees 	42.6%42Medium
+106Construct Binary Tree from Inorder and Postorder Traversal32.5%Traversal32Medium40Medium47Medium45Medium98Validate Binary Search Tree23.7%Tree23Medium
+654Maximum Binary Tree23Medium70.2%Tree23Medium70Medium
+145Binary Tree Postorder Traversal32Medium40Medium47Medium45Medium98Validate40.7%Traversal32Medium40Medium47Medium45Medium98Validate40Hard
+543Diameter of Binary Tree44.4%Tree44Easy
+117Populating Next Right Pointers in Each Node III44Medium40Easy33.8%III44Medium40Easy33Medium
+103Binary Tree Zigzag Level Order Traversal32Medium40Medium47Medium45Medium98Validate40Hard35.3%Traversal32Medium40Medium47Medium45Medium98Validate40Hard35Medium
+437Path Sum III44Medium40Easy33Medium40.0%III44Medium40Easy33Medium40Easy
+285Inorder Successor in BST 	36.2%36Medium
+113Path Sum III44Medium40Easy33Medium40Easy34.4%III44Medium40Easy33Medium40Easy34Medium
+156Binary Tree Upside Down 	45.0%45Medium
+653Two Sum IV - Input is a BST50.8%BST50Easy
+404Sum of Left Leaves47.3%Leaves47Easy
+449Serialize and Deserialize BST50Easy42.5%BST50Easy42Medium
+129Sum Root to Leaf Numbers37.1%Numbers37Medium
+606Construct String from Binary Tree49.7%Tree49Easy
+298Binary Tree Longest Consecutive Sequence 	41.3%41Medium
+538Convert BST to Greater Tree49.2%Tree49Easy
+450Delete Node in a BST37.2%BST37Medium
+637Average of Levels in Binary Tree49Easy55.6%Tree49Easy55Easy
+255Verify Preorder Sequence in Binary Search Tree 	40.6%40Medium
+501Find Mode in Binary Search Tree37.7%Tree37Easy
+652Find Duplicate Subtrees35.3%Subtrees35Medium
+563Binary Tree Tilt47.1%Tilt47Easy
+513Find Bottom Left Tree Value56.1%Value56Medium
+655Print Binary Tree50.3%Tree50Medium
+270Closest Binary Search Tree Value 	40.0%40Easy
+272Closest Binary Search Tree Value II 	39.2%39Hard
+687Longest Univalue Paths39Easy33.0%Paths39Easy33Easy
+572Subtree of Another Tree40.7%Tree40Easy
+582Kill Process 	49.5%49Medium
+515Find Largest Value in Each Tree Row55.1%Row55Medium
+366Find Leaves of Binary Tree 	60.2%60Medium
+508Most Frequent Subtree Sum52.2%Sum52Medium
+671Second Minimum Node In a Binary Tree41.7%Tree41Easy
+662Maximum Width of Binary Tree41Easy37.9%Tree41Easy37Medium
+545Boundary of Binary Tree 	31.8%31Medium
+685Redundant Connection II28.4%II28Hard
+333Largest BST Subtree 	30.6%30Medium
+663Equal Tree Partition 	36.6%36Medium
+536Construct Binary Tree from String 	42.6%42Medium
+623Add One Row to Tree46.6%Tree46Medium
+549Binary Tree Longest Consecutive Sequence II 	41.6%41Medium
+666Path Sum IV 	49.2%49Medium
+684Redundant Connection37.5%Connection37Medium
+

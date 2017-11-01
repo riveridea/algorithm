@@ -1,0 +1,119 @@
+
+#
+Title
+Acceptance
+Difficulty
+Frequency
+534Design TinyURL0.0%TinyURL0Medium
+283Move Zeroes50.6%Zeroes50Easy
+301Remove Invalid Parentheses35.4%Parentheses35Hard
+273Integer to English Words22.4%Words22Hard
+621Task Scheduler42.2%Scheduler42Medium
+67Add Binary33.1%Binary33Easy
+325Maximum Size Subarray Sum Equals k 	42.9%42Medium
+689Maximum Sum of 3 Non-Overlapping Subarrays41.4%Subarrays41Hard
+253Meeting Rooms II 	39.1%39Medium
+17Letter Combinations of a Phone Number35.2%Number35Medium
+91Decode Ways19.9%Ways19Medium
+311Sparse Matrix Multiplication 	51.5%51Medium
+297Serialize and Deserialize Binary Tree33.9%Tree33Hard
+314Binary Tree Vertical Order Traversal 	37.2%37Medium
+10Regular Expression Matching24.2%Matching24Hard
+153Sum21.8%153Sum21Medium
+278First Bad Version25.7%Version25Easy
+158Read N Characters Given Read4 II - Call multiple times 	24.5%24Hard
+277Find the Celebrity 	35.6%35Medium
+76Minimum Window Substring26.0%Substring26Hard
+200Number of Islands35.4%Islands35Medium
+257Binary Tree Paths39.5%Paths39Easy
+282Expression Add Operators30.1%Operators30Hard
+543Diameter of Binary Tree44.4%Tree44Easy
+157Read N Characters Given Read4 	29.1%29Easy
+23Merge k Sorted Lists27.6%Lists27Hard
+173Binary Search Tree Iterator42.2%Iterator42Medium
+121Best Time to Buy and Sell Stock41.9%Stock41Easy
+211Add and Search Word - Data structure design23.8%design23Medium
+56Merge Intervals30.8%Intervals30Medium
+121BestTwo Sum35.8%Sum35Easy
+597Friend Requests I: Overall Acceptance Rate 	36.2%36Easy
+161One Edit Distance 	31.5%31Medium
+252Meeting Rooms 	48.1%48Easy
+125Valid Palindrome26.5%Palindrome26Easy
+341Flatten Nested List Iterator42Medium42.1%Iterator42Medium42Medium
+285Inorder Successor in BST 	36.2%36Medium
+602Friend Requests II: Who Has the Most Friends 	41.2%41Medium
+139Word Break30.6%Break30Medium
+78Subsets42.1%78Subsets42Medium
+98Validate Binary Search Tree23.7%Tree23Medium
+43Multiply Strings27.5%Strings27Medium
+57Insert Intervals30Medium28.2%Intervals30Medium28Hard
+75Sort Colors38.3%Colors38Medium
+133Clone Graph25.1%Graph25Medium
+636Exclusive Time of Functions43.3%Functions43Medium
+215Kth Largest Element in an Array39.7%Array39Medium
+670Maximum Swap38.3%Swap38Medium
+33Search in Rotated Sorted Array39Medium32.0%Array39Medium32Medium
+79Word Search27.3%Search27Medium
+494Target Sum35Easy43.5%Sum35Easy43Medium
+206Reverse Linked List46.0%List46Easy
+680Valid Palindrome II31.9%II31Easy
+236Lowest Common Ancestor of a Binary Tree23Medium30.0%Tree23Medium30Medium
+133CloneRoman to Integer46.6%Integer46Easy
+88Merge Sorted Array39Medium32Medium32.1%Array39Medium32Medium32Easy
+642Design Search Autocomplete System 	30.2%30Hard
+477Total Hamming Distance47.7%Distance47Medium
+238Product of Array Except Self49.6%Self49Medium
+146LRU Cache18.5%Cache18Hard
+398Random Pick Index43.7%Index43Medium
+218The Skyline Problem28.0%Problem28Hard
+38Count and Say35.4%Say35Easy
+523Continuous Subarray Sum35Easy43Medium23.1%Sum35Easy43Medium23Medium
+494TargetGroup Anagrams36.1%Anagrams36Medium
+286Walls and Gates 	44.6%44Medium
+208Implement Trie (Prefix Tree)Tree29.3%Tree29Medium
+209Minimum Size Subarray Sum35Easy43Medium23Medium31.3%Sum35Easy43Medium23Medium31Medium
+554Brick Wall45.9%Wall45Medium
+102Binary Tree Level Order Traversal40.7%Traversal40Medium
+90Subsets II31Easy37.0%II31Easy37Medium
+128Longest Consecutive Sequence37.4%Sequence37Hard
+71Simplify Paths39Easy25.7%Paths39Easy25Medium
+209MinimumValid Parentheses35Hard33.6%Parentheses35Hard33Easy
+286WallsImplement strStr()strStr28.5%strStr28Easy
+377Combination Sum IV42.3%IV42Medium
+127Word Ladder19.6%Ladder19Medium
+334Increasing Triplet Subsequence39.7%Subsequence39Medium
+269Alien Dictionary 	25.0%25Hard
+44MediumWildcard Matching24Hard20.5%Matching24Hard20Hard
+639Decode Ways II31Easy37Medium23.8%II31Easy37Medium23Hard
+380Insert Delete GetRandom O(1)GetRandom39.4%GetRandom39Medium
+461Hamming Distance47Medium69.9%Distance47Medium69Easy
+647Palindromic Substrings55.7%Substrings55Medium
+235Lowest Common Ancestor of a Binary Search Tree39.4%Tree39Easy
+50Pow(x, n)50Pow26.1%50Pow26Medium
+117Populating Next Right Pointers in Each Node II31Easy37Medium23Hard33.8%II31Easy37Medium23Hard33Medium
+85Maximal Rectangle28.6%Rectangle28Hard
+69Sqrt(x)69Sqrt28.1%69Sqrt28Easy
+680ValidText Justification19.5%Justification19Hard
+210Course Schedule II31Easy37Medium23Hard33Medium28.9%II31Easy37Medium23Hard33Medium28Medium
+269AlienRemove Duplicates from Sorted Array35.4%Array35Easy
+221Maximal Square29.5%Square29Medium
+274H-Index43Medium33.4%Index43Medium33Medium
+404Sum of Left Leaves47.3%Leaves47Easy
+25HardReverse Nodes in k-Group31.0%Group31Hard
+234Palindrome Linked List46Easy33.1%List46Easy33Easy
+535Encode and Decode TinyURL0Medium74.1%TinyURL0Medium74Medium
+80Remove Duplicates from Sorted Array II31Easy37Medium23Hard33Medium28Medium36.4%II31Easy37Medium23Hard33Medium28Medium36Medium
+261Graph Valid Tree 	38.0%38Medium
+265Paint House II 	38.0%38Hard
+275H-Index II34.6%II34Medium
+410Split Array Largest Sum38.4%Sum38Hard
+525Contiguous Array40.6%Array40Medium
+168Excel Sheet Column Title26.6%Title26Easy
+572Subtree of Another Tree40.7%Tree40Easy
+578Get Highest Answer Rate Question 	27.4%27Medium
+637Average of Levels in Binary Tree40Easy55.6%Tree40Easy55Easy
+653Two Sum IV - Input is a BST50.8%BST50Easy
+673Number of Longest Increasing Subsequence39Medium31.1%Subsequence39Medium31Medium
+674Longest Continuous Increasing Subsequence39Medium31Medium43.0%Subsequence39Medium31Medium43Easy
+714Best Time to Buy and Sell Stock with Transaction Fee34.7%Fee34Medium
+
