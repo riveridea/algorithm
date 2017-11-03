@@ -1,0 +1,97 @@
+    #TitleSolutionAcceptanceDifficultyFrequency  
+    534
+    Design TinyURL   		N/AMedium
+    1
+    Two Sum   		35.8%35Easy
+    13
+    Roman to Integer   		46.6%46Easy
+    461
+    Hamming Distance   		69.8%69Easy
+    20
+    Valid Parentheses   		33.6%33Easy
+    146
+    LRU Cache   		18.5%18Hard
+    206
+    Reverse Linked List   		46.0%46Easy
+    535
+    Encode and Decode TinyURL   		74.1%74Medium
+    283
+    Move Zeroes   		50.6%50Easy
+    121
+    Best Time to Buy and Sell Stock   		41.9%41Easy
+    38
+    Count and Say   		35.5%35Easy
+    23
+    Merge k Sorted Lists   		27.6%27Hard
+    15
+    3Sum   		21.8%21Medium
+    238
+    Product of Array Except Self   		49.7%49Medium
+    10
+    Regular Expression Matching   		24.2%24Hard
+    50EasyPow(x, n)   		26.1%26Medium
+    17
+    Letter Combinations of a Phone Number   		35.2%35Medium
+    139
+    Word Break   		30.6%30Medium
+    67
+    Add Binary   		33.1%33Easy
+    88
+    Merge Sorted Array   		32.1%32Easy
+    200
+    Number of Islands   		35.4%35Medium
+    26MediumRemove Duplicates from Sorted Array   		35.4%35Easy
+    49MediumGroup Anagrams   		36.2%36Medium
+    56
+    Merge Intervals   		30.8%30Medium
+    234
+    Palindrome Linked List   		33.1%33Easy
+    283
+    Implement strStr()   		28.5%28Easy
+    85
+    Maximal Rectangle   		28.7%28Hard
+    33EasySearch in Rotated Sorted Array   		32.0%32Medium
+    173
+    Binary Search Tree Iterator   		42.3%42Medium
+    235
+    Lowest Common Ancestor of a Binary Search Tree   		39.4%39Easy
+    128
+    Longest Consecutive Sequence   		37.4%37Hard
+    273
+    Integer to English Words   		22.4%22Hard
+    69EasySqrt(x)   		28.1%28Easy
+    218
+    The Skyline Problem   		28.0%28Hard
+    79
+    Word Search   		27.3%27Medium
+    43
+    Multiply Strings   		27.5%27Medium
+    236
+    Lowest Common Ancestor of a Binary Tree   		30.0%30Medium
+    127
+    Word Ladder   		19.6%19Medium
+    168
+    Excel Sheet Column Title   		26.6%26Easy
+    125
+    Valid Palindrome   		26.5%26Easy
+    76
+    Minimum Window Substring   		26.0%26Hard
+    297
+    Serialize and Deserialize Binary Tree   		33.9%33Hard
+    215
+    Kth Largest Element in an Array   		39.8%39Medium
+    278
+    First Bad Version   		25.7%25Easy
+    78
+    Subsets   		42.2%42Medium
+    301
+    Remove Invalid Parentheses   		35.4%35Hard
+    102
+    Binary Tree Level Order Traversal   		40.8%40Medium
+    75
+    Sort Colors   		38.3%38Medium
+    91
+    Decode Ways   		19.9%19Medium
+    341
+    Flatten Nested List Iterator   		42.1%42Medium
+
