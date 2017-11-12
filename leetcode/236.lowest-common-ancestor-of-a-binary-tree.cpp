@@ -48,6 +48,20 @@
 class Solution {
 public:
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-        
+	//let try the recursion method
+        // if root's left and right match the condition, return root
+     	// if left side and right side both have one of the keys, return the current root
+        // else return the one who have both the keys as flag where the keys are
+    	if(root == NULL) return NULL;
+
+	if(root == p || root == q) //compare the pointer Not the Value to prevent the duplicated value!!       
+	    return root;
+
+	TreeNode* left = lowestCommonAncestor(root->left, p, q);
+	TreeNode* right = lowestCommonAncestor(root->right, p, q);
+	if(left != NULL && right != NULL)
+	    return root;
+
+	return (left != NULL)?left:right;
     }
 };
