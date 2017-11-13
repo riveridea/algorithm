@@ -48,6 +48,33 @@
 class Solution {
 public:
     int countComponents(int n, vector<pair<int, int>>& edges) {
-        
+	//union find algorthm 
+	//suppose very beginning we have n connected components
+	//union the two endpoints of each edges and decrease the number
+	//of connected components
+	vector<int> parents(n);
+	//initialize the parents to its own
+	iota(parents.begin(), parents.end(), 0); //successive values	
+
+	//iterate the edges
+	for(auto e : edges)	
+	{
+	    int s = findset(parents, e.first);
+	    int d = findset(parents, e.second);
+
+	    parents[s] = d; //union the two endpoint
+	    if( s != d)
+	    {
+		n--;
+	    }
+
+	}
+
+	return n;
+    }
+private:
+    int findset(vector<int>& parents, int i)
+    {
+	return parents[i] == i ? i : findset(parents, parents[i]);
     }
 };
