@@ -38,8 +38,35 @@
  * 
  */
 class Solution {
+    void swap(int *a, int *b)
+    {
+	int tmp = *a;
+	*a = *b;
+	*b = tmp;
+    }
 public:
     void sortColors(vector<int>& nums) {
-        
+            int tmp = 0, low = 0, mid = 0, high = nums.size() - 1;
+	    //the trick is when low is ++, mid is also ++
+	    //but when high -- , mid is not --
+	    //because low and mid start from the same side
+            while(mid <= high)
+            {
+                if(nums[mid] == 0)
+                {
+		    swap(&nums[mid], &nums[low]);
+                    low++;
+                    mid++;
+                }
+                else if(nums[mid] == 1)
+                {
+                    mid++;
+                }
+                else if(nums[mid] == 2)
+                {
+		    swap(&nums[mid], &nums[high]);
+                    high--;  //we don't mid++ as this nums[mid] could be 2
+                }
+            }
     }
 };
