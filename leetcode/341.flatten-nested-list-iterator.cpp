@@ -48,17 +48,45 @@
  * };
  */
 class NestedIterator {
+    stack<NestedInteger> store;
 public:
     NestedIterator(vector<NestedInteger> &nestedList) {
-        
-    }
-
-    int next() {
-        
+	//use a stack to store the nested integers 
+	if(nestedList.size() == 0) 
+	{
+	    return;
+	}
+	for(int i = nestedList.size() - 1; i >= 0; i--)
+	{
+	    //cout << "push stack " << endl;
+	    store.push(nestedList[i]); 
+	}
     }
 
     bool hasNext() {
-        
+	while(!store.empty()) 
+	{
+	    NestedInteger s = store.top();
+	    if(s.isInteger())
+	    {
+		//cout << s.getInteger() << endl;
+		return true;
+	    }
+	   
+	    store.pop(); 
+	    vector<NestedInteger> childs = s.getList();
+	    for(int i = childs.size() - 1; i >= 0; i--)
+	    {
+		store.push(childs[i]);
+	    }
+	}
+	return false;
+    }
+
+    int next() {
+	int result = store.top().getInteger();
+	store.pop();
+	return result; 
     }
 };
 
