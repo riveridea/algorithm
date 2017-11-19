@@ -38,7 +38,7 @@
  * 
  */
 class Solution {
-    void swap(int *a, int *b)
+static inline void swap(int *a, int *b)
     {
 	int tmp = *a;
 	*a = *b;
@@ -54,7 +54,13 @@ public:
             {
                 if(nums[mid] == 0)
                 {
-		    swap(&nums[mid], &nums[low]);
+		    if(nums[low] != 0)
+		    {
+			tmp = nums[mid];
+			nums[mid] = nums[low];
+			nums[low] = tmp;
+		    }
+			//Solution::swap(&nums[mid], &nums[low]);
                     low++;
                     mid++;
                 }
@@ -64,7 +70,13 @@ public:
                 }
                 else if(nums[mid] == 2)
                 {
-		    swap(&nums[mid], &nums[high]);
+		    if(nums[high] != 2)
+		    {
+			tmp = nums[mid];
+			nums[mid] = nums[high];
+			nums[high] = tmp;
+		    }
+		//	Solution::swap(&nums[mid], &nums[high]);
                     high--;  //we don't mid++ as this nums[mid] could be 2
                 }
             }
