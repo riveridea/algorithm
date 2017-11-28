@@ -25,6 +25,18 @@
 class Solution {
 public:
     int rob(vector<int>& nums) {
-        
+	//bottom up DP
+	//pre - (i-2) optimal solution
+	//cur - (i-1) optimal solution
+	//compare pre + nums[i] and cur to get (i) optimal solution
+	int n = nums.size(), pre = 0, cur = 0;
+	for (int i = 0; i < n; i++)
+	{
+	    int temp = max(pre + nums[i], cur); //cur here is i-1 solution, pre is i-2 solution
+	    pre = cur;  //updated to (i-1) solution
+	    cur = temp; //updated to (i) solution
+	}
+
+	return cur;
     }
 };
