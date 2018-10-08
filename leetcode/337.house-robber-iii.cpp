@@ -58,9 +58,26 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+
+/**/
+
 class Solution {
 public:
     int rob(TreeNode* root) {
-        
+	return dfs(root).first;	
+    }
+private:
+    pair<int, int> dfs(TreeNode* root)
+    {
+	pair<int, int>  d = {0, 0};
+	if(root)
+	{
+	    pair<int, int> dL = dfs(root->left);
+	    pair<int, int> dR = dfs(root->right);
+
+	    d.second = dL.first + dR.first;
+	    d.first = max(d.second, dL.second + dR.second + root->val);
+	}
+	return d;
     }
 };
