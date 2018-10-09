@@ -69,4 +69,21 @@ public:
     int depthSum(vector<NestedInteger>& nestedList) {
 	return DFS(nestedList, 1);        
     }
+private:
+    int DFS(vector<NestedInteger>& nestedList, int depth)
+    {
+	int sum = 0;
+	for(auto nested : nestedList)
+	{
+	    if(nested.isInteger())
+	    {
+		sum += nested.getInteger()*depth;
+	    } 
+	    else
+	    {
+		sum += DFS(nested.getList(), depth+1);
+	    }
+	}	
+	return sum;
+    }
 };
