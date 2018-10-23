@@ -22,6 +22,21 @@
 class Solution {
 public:
     int maxProduct(vector<int>& nums) {
-        
+	//dynamic programming
+	//aj could be the end of previous array or new start of the new array for an answer
+	int maxLocal = nums[0];
+	int minLocal = nums[0]; 
+	int global = nums[0];
+
+	for(int i = 1; i < nums.size(); i++)
+	{
+	    int temp = maxLocal;
+	    //first select the max from all possible options
+	    maxLocal = max(maxLocal*nums[i], max(nums[i], minLocal*nums[i]));
+	    //also need to compute the minimum, consider the product
+	    minLocal = min(temp*nums[i], min(nums[i], minLocal*nums[i]));
+	    global = max(global, maxLocal);
+	}
+	return global;	
     }
 };
