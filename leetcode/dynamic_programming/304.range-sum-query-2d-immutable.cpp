@@ -63,6 +63,7 @@ public:
 	    f[i].resize(n+1, 0);
 	}
 	//initialzie the first row
+/*
 	f[1][1] = matrix[0][0];
 	for(int j = 1; j < n+1; j++)
 	{
@@ -70,17 +71,17 @@ public:
 	    cout << "f[1][" << j << "]=" << f[1][j] << " "; 
 	}
 	cout << endl;
-
-	for(int i = 2; i < m+1; ++i)
+*/
+	for(int i = 1; i < m+1; ++i)
 	{
 	    int rowSum = 0;
 	    for(int j = 1; j < n+1; ++j)
 	    {
 		rowSum += matrix[i-1][j-1];
 		f[i][j] = f[i-1][j] + rowSum;
-		cout << i << j << ":" << f[i][j] << "|";
+//		cout << i << j << ":" << f[i][j] << "|";
 	    }
-	    cout << endl;
+//	    cout << endl;
 	}
     }
     
