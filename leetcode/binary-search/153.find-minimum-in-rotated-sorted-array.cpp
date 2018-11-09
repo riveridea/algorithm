@@ -36,6 +36,27 @@
 class Solution {
 public:
     int findMin(vector<int>& nums) {
-        
+	//if scan the array from left to right, then O(n)
+	//you can use the binary search
+	//find the folding point
+	int left = 0, right = nums.size() - 1;
+	if(right < 0) return 0;
+	if(right == 0) return nums[0];
+	if(right == 1) return min(nums[0], nums[1]);
+	
+	while(left < right)
+	{
+	    int mid = left + (right - left)/2;
+	    if(nums[mid] < nums[right])
+	    {
+		right = mid;
+	    }
+	    else
+	    {
+		left = mid + 1;	
+	    }
+	}
+
+	return nums[right];
     }
 };
