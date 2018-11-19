@@ -94,7 +94,7 @@ public:
 				distance[x][y] = distance[node.first][node.second] + 1;
 				accumulate[x][y] += distance[x][y];
 				q.push(pair<int,int>(x,y));
-				cout << min_distance << " " << accumulate[x][y] << "[" << x << "]" << "[" << y << "]";
+				//cout << min_distance << " " << accumulate[x][y] << "[" << x << "]" << "[" << y << "]";
 				if( min_distance < 0 ||  min_distance > accumulate[x][y])
 				{
 				    min_distance = accumulate[x][y];
