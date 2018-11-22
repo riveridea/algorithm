@@ -46,8 +46,45 @@
  * 
  */
 class Solution {
+    int size;
 public:
     int findTargetSumWays(vector<int>& nums, int S) {
-        
+	//try the DFS, in recursive way
+	//for each number the next has two possible ways
+	//each way go to the leaf will determine if sum 
+	size = nums.size();
+	vector<int> sums(size, 0);
+	sums[size-1] = nums[size-1];
+	for(int i = size-2; i >= 0; i--)
+	{
+	    sums[i] = nums[i] + sums[i+1];
+	}
+	return helper(nums, sums, S, 0, 0);
+    }
+
+    int helper(vector<int>& nums, vector<int>& sums,  int S, int curr_sum, int index)
+    {
+	if(index == size)
+	    return S == curr_sum ? 1 : 0;
+
+	if(sums[index] < abs(S - curr_sum)) return 0; 
+	return helper(nums, sums,  S, curr_sum+nums[index], index+1) +
+	       helper(nums, sums,  S, curr_sum-nums[index], index+1);
     }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
