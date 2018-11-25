@@ -59,6 +59,54 @@
 class Solution {
 public:
     int longestConsecutive(TreeNode* root) {
-        
+	//recursive,
+	//for each node, we have a pair<int,int>
+	//first --> max len on increasing path
+	//second --> max len on decreasing path
+	//for each node we need to consider its contact with parent, left child, and right child
+	//each recursive returns the pair<int, int> at this node
+	//thus we also know the pair<int, int> of its left and right
+	//also consider the parent val and current val to determine the parent->node is on a increasing
+	//or decreasing path, only on a valid path this node has a non-zero pair of <int, int>
+	int res = 0;
+	helper(root, root, res);
+	return res;
+    }
+
+private:
+    pair<int, int> helper(TreeNode* node, TreeNode* parent, int& res)
+    {
+	//stop on the next of leaf
+	if(!node) return {0, 0};
+	pair<int, int> left = helper(node->left, node, res);
+	pair<int, int> right = helper(node->right, node, res);
+	//please note, if the child's first and second is not zero, it means the node and child is on
+	//the valid path, so we can update based its child's len
+	res = max(res, left.first + right.second + 1);
+	res = max(res, right.first + left.second + 1);
+	//now we update the the node's own first and second based on its relationship with parent
+	int inc =0, dec = 0;
+	if(node->val - parent->val == 1) //on the increasing path from parent
+	{
+	    inc = max(left.first, right.first) + 1; //if extending to its child
+	}
+	if(parent->val - node->val == 1)
+	{
+	    dec = max(left.second, right.second) + 1; //if extending to its child
+	}
+
+	return {inc, dec};
     }
 };
+
+
+
+
+
+
+
+
+
+
+
+
