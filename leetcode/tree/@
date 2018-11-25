@@ -89,45 +89,46 @@
 class Solution {
 public:
     vector<int> boundaryOfBinaryTree(TreeNode* root) {
-	//3 steps: print left mosts, print leaves, print right mosts
-	if (!root) return {};
-	vector<int> res, right;
-	TreeNode *l = root->left, *r = root->right, *p = root;
-	if (root->left || root->right) res.push_back(root->val);
-	while(l && (l->left || l->right))  //excludes the leaf
+	//trying level order and choose the start and end of each level except the last level in which the whole level is selected
+	vector<int> result;
+	if(!root) return result;
+	vector<vector<int>> levels;
+
+	int level_size = 0;
+	queue<TreeNode*> q;
+	q.push(root);
+
+	while(!q.empty())
 	{
-	    res.push_back(l->val);
-	    if(l->left) l = l->left;
-	    else
-		l = l->right;
-	}
-	//print all leaves, with in-order
-	stack<TreeNode*> st;
-	while(p || !st.empty())
-	{
-	    if(p)
+	    level_size = q.size();
+	    vector<int> level;
+	    while(level_size)
 	    {
-		st.push(p);
-		if(!p->left && !p->right) res.push_back(p->val);
-		p = p->left;
+		TreeNode* current = q.front();
+		q.pop();
+		level_size--;
+		level.push_back(current->val);
+		if(current->left) q.push(current->left);
+		if(current->right) q.push(current->right);
 	    }
-	    else
-	    {
-		p = st.top();
-		st.pop();
-		p = p->right;
-	    }
+	    levels.push_back(level);
 	}
-	//print all right most
-	//firstly print to right and then reverse
-	while (r && ((r->left) || r->right))  //excludes the leaf
+	
+	int m = levels.size();
+	result.push_back(levels[0][0]);
+	for(int i = 0; i < m-1; i++)
 	{
-	    right.push_back(r->val);
-	    if(r->right) r = r->right;
-	    else
-		r = r->left;
+	    result.push_back(levels[i][0]);
 	}
-	res.insert(res.end(), right.rbegin(), right.rend());
-	return res;
+	int n = levels[m-1].size();
+	for(int j = 0; j < n-1; j++)
+	{
+	    result.push_back(levels[m-1][j]);
+	}
+	for(int k = m -2; k > 0; k--)
+	{
+	    result.push_back(*(levels[k].end() - 1));
+	}
+	return result;
     }
 };
