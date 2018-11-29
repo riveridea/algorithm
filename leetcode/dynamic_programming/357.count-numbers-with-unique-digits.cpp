@@ -24,7 +24,7 @@
  * 
  * 
  */
-class Solution {
+class Solution{ 
 public:
     int countNumbersWithUniqueDigits(int n) {
 	//this problem is actually a math problem
