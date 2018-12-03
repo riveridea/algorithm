@@ -45,13 +45,11 @@ public:
 	
 	if(s.size() == 0) return false;
 
-	bool canMove = false;
 	for(int i = 0; i < s.size() - 1; i++)
 	{
 	    //find availble move
 	    if (s[i] == '+' && s[i+1] == '+')
 	    {
-		canMove = true;
 		//doing move
 		s[i] = '-';
 		s[i+1] = '-';
@@ -62,14 +60,10 @@ public:
 		//next user can win, so try next possible move testing if can win
 		s[i] = '+';
 		s[i+1] = '+';
-		canMove = false;
 	    }
 	}
 
-	if(!canMove)  // no way to move, so no way to win
-	{
-	    return false;
-	}
+	return false;
     }
 };
 
