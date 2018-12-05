@@ -34,9 +34,10 @@ public:
                 else if (nums[i] + nums[j] + nums[k] > target)
                 {
                     //need to find a less *k
-                    --k;
+                    //--k;
                     //handle possible duplicates
                     //while(*k == *(k+1) && j<k) --k;
+                    do{k--;}while((nums[k] == nums[k+1]) && j<k);
                 }
                 else
                 {

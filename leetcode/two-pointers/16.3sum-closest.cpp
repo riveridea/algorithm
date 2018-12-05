@@ -47,10 +47,14 @@ public:
 
 		//update the left and right
 		if(currSum > target)
-		    right--;
+		{
+		    do{right--;}while(nums[right]== nums[right+1] && right > left);
+		}
 		else
-		    left++;
-	    }
+		{
+		    do{left++;}while(nums[left] == nums[left-1] && left < right);
+		}
+	   }
 	}
 	return c;
     }
