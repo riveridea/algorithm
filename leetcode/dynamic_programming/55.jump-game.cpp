@@ -47,5 +47,45 @@ public:
 	//the first the known thing is the right most (dest) is definitily GOOD point to reach 
 	//the destination, then iteratet from the right to the left until the very start, you will 
 	//know if it is GOOD or UNKNOWN point, very intuitive.
+	//0: unknown
+	//1: BAD
+	//2: GOOD
+
+	int n = nums.size();
+	vector<int> stat(n, 0); //initialized as all unknown;
+	stat[n-1] = 2; //the last one musht be GOOD
+	
+	for(int i = n -2; i >= 0; i--)
+	{
+	    //let us try all the possible moves at position i
+	    int walk_dst = min(i+nums[i], n-1); //the farest possible this walk
+	    //try the 1 by 1
+	    bool isgood = false;
+	    for(int j = 1; j < walk_dst - i + 1; j++)
+	    {
+		if(stat[i + j] == 2) // on the path, at least on
+		{
+		    stat[i] = 2;
+		    isgood = true;
+		    break;
+		}
+	    }
+
+	    //no path to GOOD is found
+	    stat[i] = isgood ? 2 : 1; //BAD
+	}
+
+	return stat[0] == 2;
     }
 };
+
+
+
+
+
+
+
+
+
+
+
