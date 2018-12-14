@@ -43,5 +43,19 @@ public:
 	//recursive, and divie and conquer
 	// divide the input string to two parts everytime we meet a  operator
 	// then try every combinations to get the results
+	vector<int> result;
+	for(int i = 0; i < input.size(); i++)
+	{
+	    char c = input[i];
+	    if (ispunct(c))
+	    {
+		vector<int> firsthalf = diffWaysToCompute(input.substr(0,i));
+		vector<int> secondhalf = diffWaysToCompute(input.substr(i+1));
+		for(auto a : firsthalf)
+		    for(auto b : secondhalf)
+			result.push_back(c=='+' ? a+b : c=='-'? a-b: a*b);	
+	    }
+	}
+	return result.size()?result:vector<int>{stoi(input)};
     }
 };
