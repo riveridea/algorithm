@@ -59,8 +59,14 @@ public:
 	if(n == 0) return;
 	//step 1: Find the median
 	vector<int>::iterator nth = next(nums.begin(), n/2);
+	//nth_element(nums.begin(), nth, nums.end(), Solution::myfunc);
 	nth_element(nums.begin(), nth, nums.end());
 	int median = *nth;
+	cout << "median = " << median << " ->";
+	for(int i=0; i<n; i++)
+	{
+	    cout << ' ' <<  nums[i] << ' ';	
+	}
 
 	//perform an equvalent 3-way partition, with mapped (equavlent) indexed elements
 	auto m = [n](int idx) {return (2*idx +1)%(n|1);};  //lambda function
@@ -85,6 +91,9 @@ public:
 		c++;
 	}
     }
+
+private:
+    static bool myfunc(int i, int j) {return (i < j);}
 };
 
 
