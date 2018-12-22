@@ -65,11 +65,8 @@ public:
 	{
 	    curr_odd->next = curr_even->next;
 	    curr_odd = curr_odd->next;
-	    if(curr_odd) 
-	    {
-		curr_even->next = curr_odd->next;
-		curr_even = curr_even->next;
-	    }
+	    curr_even->next = curr_odd->next;
+	    curr_even = curr_even->next;
 	}
 	curr_odd->next = even_head;
 	return odd_head;
