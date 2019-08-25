@@ -71,7 +71,7 @@ public:
 	int n = workers.size();
 	int m = bikes.size();
 
-	vector<vector<int>> dp(n+1, vector<int>(1<<m, INT_MAX));
+	vector<vector<int>> dp(n+1, vector<int>(1<<m, INT_MAX/2)); //int_max/2 avoid overflow 
 	dp[0][0] = 0;
 
 	int min_d = INT_MAX;
@@ -84,11 +84,12 @@ public:
 		//each state is mapping to the using or not using for all the bikes
 		for (int j = 0; j < m; j++)
 		{
-		    if(s & (1<<j) == 0) continue;
+		    if((s & (1<<j)) == 0) continue;
 		    //the jth bike is going to be used by the ith worker
 		    //the prev state is just the jth bike not using
 		    int prev = s ^ (1 <<j);
-		    dp[i][s] = min(dp[i][s], dp[i-1][prev] + dis(workers[i-1], bikes[j]));
+		    //cout << "dp[i-1][prev]=" << dp[i-1][prev];
+		    dp[i][s] = min(dp[i][s], dp[i-1][prev] + dis(workers[i-1], bikes[j])); //coudl overflow here
 		    //don't forget to update min
 		    if(i == n)
 			min_d = min(min_d, dp[i][s]);
