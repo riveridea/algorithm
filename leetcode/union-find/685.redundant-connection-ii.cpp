@@ -1,12 +1,23 @@
 /*
+<<<<<<< HEAD
+=======
+ * @lc app=leetcode id=685 lang=cpp
+ *
+>>>>>>> 9d4762b9ad97a2eb35a6e203316322ec793e8caf
  * [685] Redundant Connection II
  *
  * https://leetcode.com/problems/redundant-connection-ii/description/
  *
  * algorithms
+<<<<<<< HEAD
  * Hard (30.87%)
  * Total Accepted:    23.5K
  * Total Submissions: 76.3K
+=======
+ * Hard (31.06%)
+ * Total Accepted:    24.9K
+ * Total Submissions: 80K
+>>>>>>> 9d4762b9ad97a2eb35a6e203316322ec793e8caf
  * Testcase Example:  '[[1,2],[1,3],[2,3]]'
  *
  * 
@@ -57,92 +68,82 @@
 class Solution {
 public:
     vector<int> findRedundantDirectedConnection(vector<vector<int>>& edges) {
-	//add edge one by one
-	//1. if found the virtex pointed by two parent, don't add the second edge(acatually already removed), store the first edge
-	//2. if added, then detect circle by union-find, if yes, store the last edge
-	//3. after all the edges are added, check if 
-	//   a) last == -1, means no circle, just returen the second edge as this is the removed
-	//   b) last != -1 and second == -1, means just a circle but there is no point with two parents, return the last edge
-	//   c) in this case, no circle and with one point having two parents, return the first edge or the second
+	//The candidated of edge of redundancy is egde that causes one node who will have 
+	//two parents.
+	//the first step is to check if a adding edge would cause the duplicated parents.
+	//if yes, record both the edges, the old one as ans1, the new one as ans2
+	//then firstly make the new edge avoid thus this edge will not be visited 
+	//in the 2nd step.
+	//the next step is to find hte cycle
+	//if cycle detected, then check ans1 exists or not
+	//if ans1 exist, means the duplicated parents exists, then this ans1 is the answer
+	//if ans1 does not exist, means no duplicated parents, then this new edge is the answer
+	//if no cycle detected, just retrun ans2
+	//use the union-find with path cmpression and union by size to accelerate
+	
+	vector<int> parent(edges.size() + 1, 0);
+	vector<int> root(edges.size() + 1, 0);
+	vector<int> sizes(edges.size() + 1, 1);
+	
+	vector<int> ans1; //old edge for duplicated parents
+	vector<int> ans2; //new edge for duplicted parents
 
-	//init the parents and disjoint set
-	int n = edges.size();
-	vector<int> parents(n+1, -1); //store the edge pointing to him
-	vector<int> dset(n+1, -1);
+	//detect the duplicated parents
+	for(auto& edge : edges){ //don't forget & 
+	    int u = edge[0];
+	    int v = edge[1];
 
-	int first = -1, second = -1, last = -1;
-	int index = -1; 
-	for(auto e : edges )
-	{
-	    index++;
-	    int p = e[0], c = e[1];
-	    if(parents[c] != -1) 
+	    if(parent[v] > 0) //find duplicated parent
 	    {
-		first = parents[c];
-		second = index;
-		continue; //don't union p and c, this edge is not added
-	    }
-	    parents[c] = index;
+		ans1 = {parent[v], v};
+		ans2 = edge;
 
-	    //union p and c(add this edge), detect circle
-	    int s = find(dset, p);
-	    if(s == c) 
-		last = index;
-	    else 
-		dset[c] = s;
+		//skip the new edge for the 2nd step of deteting the cycle
+		edge[0] = edge[1] = -1;
+	    }
+	    parent[v] = u;
 	}
 
-	if (last == -1)
-	    return edges[second];
-	else if(second == -1) 
-	    return edges[last];
-	else
-	    return edges[first];
+	//detect the cycle
+	for(auto& edge : edges)
+	{
+	    int u = edge[0];
+	    int v = edge[1];
+	    if(u < 0 || v < 0) continue;
+	    if(union_set(u, v, root, sizes)){ //this edge causing a cycle
+		return ans1.empty()?edge:ans1;
+	    }	
+	}
+
+	return ans2;
+	
     }
 
-private:
-    int find(vector<int>& dset, int p)
+    //path compression
+    int find(int v, vector<int>& root)
     {
-	if(dset[p] == -1)
-	    return p;
-	else
+	if(v == root[v])
+	    return v;
+
+	return root[v] = find(root[v], root);
+    }
+
+    bool union_set(int a, int b, vector<int>& root, vector<int>& sizes)
+    {
+	if(root[a] == 0) root[a] = a;
+	if(root[b] == 0) root[b] = b;
+	a = find(a, root);
+	b = find(b, root);
+	if(a != b)
 	{
-	    return find(dset, dset[p]);
+	    if(sizes[a] < sizes[b])
+		swap(a, b);
+	    
+	    root[b] = a;
+	    sizes[a] += sizes[b];
+
+	    return false;
 	}
+	return true;
     }
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
