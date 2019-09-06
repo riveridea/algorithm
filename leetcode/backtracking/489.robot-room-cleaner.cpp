@@ -112,7 +112,7 @@ public:
 };
 
 class Solution {
-    int dirs[4][2] = {{1,0}, {0,1}, {-1,0}, {0,-1}};
+    int dirs[4][2] = {{1,0}, {0,1}, {-1,0}, {0,-1}}; //must be clockwise
     unordered_set<pair<int,int>, myHasher, myEqual> v;
 public:
     void goBack(Robot& robot){
