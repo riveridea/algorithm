@@ -48,5 +48,44 @@ public:
 	//pop back and try another next one,
 	//each curr_res at the begining of the dfs are pushed tp res
 	//finally return res
+	vector<vector<int>> res;
+	vector<int> curr_res;
+
+	n = nums.size();
+	dfs(res, curr_res, nums, 0);
+	return res;
+    }
+private:
+    int n;
+    void dfs(vector<vector<int>>& res, vector<int>& curr_res, vector<int>& nums, int pos){
+	if(curr_res.size() > 1) res.push_back(curr_res);
+	
+	unordered_set<int> hash;
+	for(int i = pos; i < n; i++){
+	    if((curr_res.empty() || nums[i] >= curr_res.back()) && hash.find(nums[i]) == hash.end()){
+		curr_res.push_back(nums[i]);
+		dfs(res, curr_res, nums, i+1);
+		curr_res.pop_back();
+		hash.insert(nums[i]);
+	    }    
+	}
     }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
