@@ -44,6 +44,17 @@
 class Solution {
 public:
     int numWays(int n, int k) {
-        
+	//dp, wiht two preceeding conditions, diffCnt and sameCnt
+	if(n == 0) return 0;
+	else if(n == 1) return k;
+
+	long long diffCnt = k*(k-1), sameCnt = k;
+	for(int i = 2; i < n; i++)
+	{
+	    long long temp = sameCnt;
+	    sameCnt = diffCnt;
+	    diffCnt = temp*(k-1) + diffCnt*(k-1);
+	}
+	return diffCnt + sameCnt;
     }
 };
