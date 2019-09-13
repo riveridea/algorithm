@@ -51,9 +51,14 @@ public:
 	long long diffCnt = k*(k-1), sameCnt = k;
 	for(int i = 2; i < n; i++)
 	{
+#if 0
 	    long long temp = sameCnt;
 	    sameCnt = diffCnt;
 	    diffCnt = temp*(k-1) + diffCnt*(k-1);
+#endif
+	    long long temp = diffCnt;
+	    diffCnt = (sameCnt + diffCnt)*(k-1);
+	    sameCnt = temp;
 	}
 	return diffCnt + sameCnt;
     }
