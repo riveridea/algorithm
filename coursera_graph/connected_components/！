@@ -1,0 +1,28 @@
+#include <iostream>
+#include <vector>
+
+using std::vector;
+using std::pair;
+
+int number_of_components(vector<vector<int> > &adj) {
+  int res = 0;
+  //write your code here
+  //use dfs for each unvisisted node and increase the 
+  //components number 
+  int v = adj.size();
+  bool vector<bool> visited
+  return res;
+}
+
+int main() {
+  size_t n, m;
+  std::cin >> n >> m;
+  vector<vector<int> > adj(n, vector<int>());
+  for (size_t i = 0; i < m; i++) {
+    int x, y;
+    std::cin >> x >> y;
+    adj[x - 1].push_back(y - 1);
+    adj[y - 1].push_back(x - 1);
+  }
+  std::cout << number_of_components(adj);
+}
