@@ -1,0 +1,1515 @@
+cscope 15 $HOME/sourcecode/algorithm/topological_sort               0000006898
+	@tsort.c
+
+39 
+	~<sys/cdefs.h
+>
+
+40 #i‚de‡
+löt
+
+
+41 
+__COPYRIGHT
+("@(#) Copyright (c) 1989, 1993, 1994\n\
+ Regents ofÅhe University of California. AllÑightsÑeserved.\n");
+
+45 #i‚de‡
+löt
+
+
+47 
+	gsccsid
+[] = "@(#)tsort.c 8.3 (Berkeley) 5/4/95";
+
+49 
+__RCSID
+("$NetBSD:Åsort.c,v 1.13 1998/08/25 20:59:42Ñoss Exp $");
+
+52 
+	~<sys/ty≥s.h
+>
+
+54 
+	~<˘y≥.h
+>
+
+55 
+	~<db.h
+>
+
+56 
+	~<îr.h
+>
+
+57 
+	~<î∫o.h
+>
+
+58 
+	~<f˙é.h
+>
+
+59 
+	~<°dio.h
+>
+
+60 
+	~<°dlib.h
+>
+
+61 
+	~<°rög.h
+>
+
+62 
+	~<uni°d.h
+>
+
+81 
+	#HASHSIZE
+ 53
+
+	)
+
+82 
+	#NF_MARK
+ 0x1
+
+	)
+
+83 
+	#NF_ACYCLIC
+ 0x2
+
+	)
+
+84 
+	#NF_NODEST
+ 0x4
+
+	)
+
+86 
+node_°r
+ 
+	tNODE
+;
+
+88 
+	snode_°r
+ {
+
+89 
+NODE
+ **
+	mn_¥evp
+;
+
+90 
+NODE
+ *
+	mn_√xt
+;
+
+91 
+NODE
+ **
+	mn_¨cs
+;
+
+92 
+	mn_«rcs
+;
+
+93 
+	mn_¨csize
+;
+
+94 
+	mn_ªf˙t
+;
+
+95 
+	mn_Êags
+;
+
+96 
+	mn_«me
+[1];
+
+99 
+	s_buf
+ {
+
+100 *
+	mb_buf
+;
+
+101 
+	mb_bsize
+;
+
+102 } 
+	tBUF
+;
+
+104 
+DB
+ *
+	gdb
+;
+
+105 
+NODE
+ *
+	ggøph
+, **
+	gcy˛e_buf
+, **
+	gl⁄ge°_cy˛e
+;
+
+106 
+	gdebug
+, 
+	gl⁄ge°
+, 
+	gquõt
+;
+
+108 
+add_¨c
+ 
+__P
+((*, *));
+
+109 
+˛ór_cy˛e
+ 
+__P
+(());
+
+110 
+föd_cy˛e
+ 
+__P
+((
+NODE
+ *, NODE *, , ));
+
+111 
+NODE
+ *
+gë_node
+ 
+__P
+((*));
+
+112 *
+grow_buf
+ 
+__P
+((*, ));
+
+113 
+maö
+ 
+__P
+((, **));
+
+114 
+ªmove_node
+ 
+__P
+((
+NODE
+ *));
+
+115 
+ts‹t
+ 
+__P
+(());
+
+116 
+ußge
+ 
+__P
+(());
+
+119 
+	$maö
+(
+¨gc
+, 
+¨gv
+)
+
+120 
+¨gc
+;
+
+121 *
+¨gv
+[];
+
+123 
+BUF
+ *
+b
+;
+
+124 
+c
+, 
+n
+;
+
+125 
+FILE
+ *
+Â
+;
+
+126 
+bsize
+, 
+ch
+, 
+nu£d
+;
+
+127 
+BUF
+ 
+bufs
+[2];
+
+129 
+Â
+ = 
+NULL
+;
+
+130 (
+ch
+ = 
+	`gë›t
+(
+¨gc
+, 
+¨gv
+, "dlq")) != -1)
+
+131 
+ch
+) {
+
+133 
+debug
+ = 1;
+
+136 
+l⁄ge°
+ = 1;
+
+139 
+quõt
+ = 1;
+
+143 
+	`ußge
+();
+
+145 
+¨gc
+ -
+›töd
+;
+
+146 
+¨gv
+ +
+›töd
+;
+
+148 
+¨gc
+) {
+
+150 
+Â
+ = 
+°dö
+;
+
+153 i‡((
+Â
+ = 
+	`f›í
+(*
+¨gv
+, "r")Ë=
+NULL
+)
+
+154 
+	`îr
+(1, "%s", *
+¨gv
+);
+
+157 
+	`ußge
+();
+
+160 
+b
+ = 
+bufs
+, 
+n
+ = 2; --n >= 0; b++)
+
+161 
+b
+->
+b_buf
+ = 
+	`grow_buf
+(
+NULL
+, b->
+b_bsize
+ = 1024);
+
+164 
+n
+ = 0, 
+c
+ = 
+	`gëc
+(
+Â
+);;) {
+
+165 
+c
+ !
+EOF
+ && 
+	`is•a˚
+(c))
+
+166 
+c
+ = 
+	`gëc
+(
+Â
+);
+
+167 i‡(
+c
+ =
+EOF
+)
+
+170 
+nu£d
+ = 0;
+
+171 
+b
+ = &
+bufs
+[
+n
+];
+
+172 
+bsize
+ = 
+b
+->
+b_bsize
+;
+
+174 
+b
+->
+b_buf
+[
+nu£d
+++] = 
+c
+;
+
+175 i‡(
+nu£d
+ =
+bsize
+)
+
+176 
+b
+->
+b_buf
+ = 
+	`grow_buf
+(b->b_buf, 
+bsize
+ *= 2);
+
+177 
+c
+ = 
+	`gëc
+(
+Â
+);
+
+178 } 
+c
+ !
+EOF
+ && !
+	`is•a˚
+(c));
+
+180 
+b
+->
+b_buf
+[
+nu£d
+] = '\0';
+
+181 
+b
+->
+b_bsize
+ = 
+bsize
+;
+
+182 i‡(
+n
+)
+
+183 
+	`add_¨c
+(
+bufs
+[0].
+b_buf
+, bufs[1].b_buf);
+
+184 
+n
+ = !n;
+
+186 ()
+	`f˛o£
+(
+Â
+);
+
+187 i‡(
+n
+)
+
+188 
+	`îrx
+(1, "odd data count");
+
+191 
+	`ts‹t
+();
+
+192 
+	`exô
+(0);
+
+193 
+	}
+}
+
+197 
+	$grow_buf
+(
+bp
+, 
+size
+)
+
+198 *
+bp
+;
+
+199 
+size
+;
+
+201 i‡((
+bp
+ = 
+	`ªÆloc
+(bp, (
+u_öt
+)
+size
+)Ë=
+NULL
+)
+
+202 
+	`îr
+(1, "realloc");
+
+203  (
+bp
+);
+
+204 
+	}
+}
+
+211 
+	$add_¨c
+(
+s1
+, 
+s2
+)
+
+212 *
+s1
+, *
+s2
+;
+
+214 
+NODE
+ *
+n1
+;
+
+215 
+NODE
+ *
+n2
+;
+
+216 
+bsize
+, 
+i
+;
+
+218 
+n1
+ = 
+	`gë_node
+(
+s1
+);
+
+220 i‡(!
+	`°rcmp
+(
+s1
+, 
+s2
+))
+
+223 
+n2
+ = 
+	`gë_node
+(
+s2
+);
+
+228 
+i
+ = 0; i < 
+n1
+->
+n_«rcs
+; i++)
+
+229 i‡(
+n1
+->
+n_¨cs
+[
+i
+] =
+n2
+)
+
+234 i‡(
+n1
+->
+n_«rcs
+ =n1->
+n_¨csize
+) {
+
+235 i‡(!
+n1
+->
+n_¨csize
+)
+
+236 
+n1
+->
+n_¨csize
+ = 10;
+
+237 
+bsize
+ = 
+n1
+->
+n_¨csize
+ * (*n1->
+n_¨cs
+) * 2;
+
+238 
+n1
+->
+n_¨cs
+ = 
+	`grow_buf
+“1->n_¨cs, 
+bsize
+);
+
+239 
+n1
+->
+n_¨csize
+ = 
+bsize
+ / (*n1->
+n_¨cs
+);
+
+241 
+n1
+->
+n_¨cs
+[n1->
+n_«rcs
+++] = 
+n2
+;
+
+242 ++
+n2
+->
+n_ªf˙t
+;
+
+243 
+	}
+}
+
+246 
+NODE
+ *
+
+247 
+	$gë_node
+(
+«me
+)
+
+248 *
+«me
+;
+
+250 
+DBT
+ 
+d©a
+, 
+key
+;
+
+251 
+NODE
+ *
+n
+;
+
+253 i‡(
+db
+ =
+NULL
+ &&
+
+254 (
+db
+ = 
+	`db›í
+(
+NULL
+, 
+O_RDWR
+, 0, 
+DB_HASH
+, NULL)) == NULL)
+
+255 
+	`îr
+(1, "db: %s", 
+«me
+);
+
+257 
+key
+.
+d©a
+ = 
+«me
+;
+
+258 
+key
+.
+size
+ = 
+	`°æí
+(
+«me
+) + 1;
+
+260 (*
+db
+->
+gë
+)(db, &
+key
+, &
+d©a
+, 0)) {
+
+262 
+	`memmove
+(&
+n
+, 
+d©a
+.data, (n));
+
+263  (
+n
+);
+
+268 
+	`îr
+(1, "db: %s", 
+«me
+);
+
+271 i‡((
+n
+ = 
+	`mÆloc
+((
+NODE
+Ë+ 
+key
+.
+size
+)Ë=
+NULL
+)
+
+272 
+	`îr
+(1, "malloc");
+
+274 
+n
+->
+n_«rcs
+ = 0;
+
+275 
+n
+->
+n_¨csize
+ = 0;
+
+276 
+n
+->
+n_¨cs
+ = 
+NULL
+;
+
+277 
+n
+->
+n_ªf˙t
+ = 0;
+
+278 
+n
+->
+n_Êags
+ = 0;
+
+279 
+	`memmove
+(
+n
+->
+n_«me
+, 
+«me
+, 
+key
+.
+size
+);
+
+282 i‡((
+n
+->
+n_√xt
+ = 
+gøph
+Ë!
+NULL
+)
+
+283 
+gøph
+->
+n_¥evp
+ = &
+n
+->
+n_√xt
+;
+
+284 
+n
+->
+n_¥evp
+ = &
+gøph
+;
+
+285 
+gøph
+ = 
+n
+;
+
+288 
+d©a
+.d©®&
+n
+;
+
+289 
+d©a
+.
+size
+ = (
+n
+);
+
+290 i‡((*
+db
+->
+put
+)(db, &
+key
+, &
+d©a
+, 0))
+
+291 
+	`îr
+(1, "db: %s", 
+«me
+);
+
+292  (
+n
+);
+
+293 
+	}
+}
+
+300 
+	$˛ór_cy˛e
+()
+
+302 
+NODE
+ *
+n
+;
+
+304 
+n
+ = 
+gøph
+;Ç !
+NULL
+;Ç =Ç->
+n_√xt
+)
+
+305 
+n
+->
+n_Êags
+ &~
+NF_NODEST
+;
+
+306 
+	}
+}
+
+310 
+	$ts‹t
+()
+
+312 
+NODE
+ *
+n
+, *
+√xt
+;
+
+313 
+˙t
+, 
+i
+;
+
+315 
+gøph
+ !
+NULL
+) {
+
+322 
+˙t
+ = 0, 
+n
+ = 
+gøph
+;Ç !
+NULL
+;Ç = 
+√xt
+) {
+
+323 
+√xt
+ = 
+n
+->
+n_√xt
+;
+
+324 i‡(
+n
+->
+n_ªf˙t
+ == 0) {
+
+325 
+	`ªmove_node
+(
+n
+);
+
+326 ++
+˙t
+;
+
+329 } 
+gøph
+ !
+NULL
+ && 
+˙t
+);
+
+331 i‡(
+gøph
+ =
+NULL
+)
+
+334 i‡(!
+cy˛e_buf
+) {
+
+340 
+˙t
+ = 0, 
+n
+ = 
+gøph
+;Ç !
+NULL
+;Ç =Ç->
+n_√xt
+)
+
+341 ++
+˙t
+;
+
+342 
+cy˛e_buf
+ = 
+	`mÆloc
+((
+u_öt
+)(
+NODE
+ *Ë* 
+˙t
+);
+
+343 
+l⁄ge°_cy˛e
+ = 
+	`mÆloc
+((
+u_öt
+)(
+NODE
+ *Ë* 
+˙t
+);
+
+344 i‡(
+cy˛e_buf
+ =
+NULL
+ || 
+l⁄ge°_cy˛e
+ == NULL)
+
+345 
+	`îr
+(1, "malloc");
+
+347 
+n
+ = 
+gøph
+;Ç !
+NULL
+;Ç =Ç->
+n_√xt
+) {
+
+348 i‡(!(
+n
+->
+n_Êags
+ & 
+NF_ACYCLIC
+)) {
+
+349 i‡((
+˙t
+ = 
+	`föd_cy˛e
+(
+n
+,Ç, 0, 0)) != 0) {
+
+350 i‡(!
+quõt
+) {
+
+351 
+	`w¨nx
+("cycle in data");
+
+352 
+i
+ = 0; i < 
+˙t
+; i++)
+
+353 
+	`w¨nx
+("%s",
+
+354 
+l⁄ge°_cy˛e
+[
+i
+]->
+n_«me
+);
+
+356 
+	`ªmove_node
+(
+n
+);
+
+357 
+	`˛ór_cy˛e
+();
+
+361 
+n
+->
+n_Êags
+ |
+NF_ACYCLIC
+;
+
+362 
+	`˛ór_cy˛e
+();
+
+366 i‡(
+n
+ =
+NULL
+)
+
+367 
+	`îrx
+(1, "internalÉrror -- couldÇot find cycle");
+
+369 
+	}
+}
+
+373 
+	$ªmove_node
+(
+n
+)
+
+374 
+NODE
+ *
+n
+;
+
+376 
+NODE
+ **
+≈
+;
+
+377 
+i
+;
+
+379 ()
+	`¥ötf
+("%s\n", 
+n
+->
+n_«me
+);
+
+380 
+≈
+ = 
+n
+->
+n_¨cs
+, 
+i
+ =Ç->
+n_«rcs
+; --i >= 0;Çp++)
+
+381 --(*
+≈
+)->
+n_ªf˙t
+;
+
+382 
+n
+->
+n_«rcs
+ = 0;
+
+383 *
+n
+->
+n_¥evp
+ =Ç->
+n_√xt
+;
+
+384 i‡(
+n
+->
+n_√xt
+)
+
+385 
+n
+->
+n_√xt
+->
+n_¥evp
+ =Ç->n_prevp;
+
+386 
+	}
+}
+
+391 
+	$föd_cy˛e
+(
+‰om
+, 
+to
+, 
+l⁄ge°_Àn
+, 
+dïth
+)
+
+392 
+NODE
+ *
+‰om
+, *
+to
+;
+
+393 
+dïth
+, 
+l⁄ge°_Àn
+;
+
+395 
+NODE
+ **
+≈
+;
+
+396 
+i
+, 
+Àn
+;
+
+402 i‡(
+‰om
+->
+n_Êags
+ & (
+NF_NODEST
+|
+NF_MARK
+|
+NF_ACYCLIC
+))
+
+404 
+‰om
+->
+n_Êags
+ |
+NF_MARK
+;
+
+406 
+≈
+ = 
+‰om
+->
+n_¨cs
+, 
+i
+ = from->
+n_«rcs
+; --i >= 0;Çp++) {
+
+407 
+cy˛e_buf
+[
+dïth
+] = *
+≈
+;
+
+408 i‡(*
+≈
+ =
+to
+) {
+
+409 i‡(
+dïth
+ + 1 > 
+l⁄ge°_Àn
+) {
+
+410 
+l⁄ge°_Àn
+ = 
+dïth
+ + 1;
+
+411 ()
+	`mem˝y
+((*)
+l⁄ge°_cy˛e
+,
+
+412 (*)
+cy˛e_buf
+,
+
+413 
+l⁄ge°_Àn
+ * (
+NODE
+ *));
+
+416 i‡((*
+≈
+)->
+n_Êags
+ & (
+NF_MARK
+|
+NF_ACYCLIC
+|
+NF_NODEST
+))
+
+418 
+Àn
+ = 
+	`föd_cy˛e
+(*
+≈
+, 
+to
+, 
+l⁄ge°_Àn
+, 
+dïth
+ + 1);
+
+420 i‡(
+debug
+)
+
+421 ()
+	`¥ötf
+("%*†%s->%†%d\n", 
+dïth
+, "",
+
+422 
+‰om
+->
+n_«me
+, 
+to
+->n_«me, 
+Àn
+);
+
+424 i‡(
+Àn
+ == 0)
+
+425 (*
+≈
+)->
+n_Êags
+ |
+NF_NODEST
+;
+
+427 i‡(
+Àn
+ > 
+l⁄ge°_Àn
+)
+
+428 
+l⁄ge°_Àn
+ = 
+Àn
+;
+
+430 i‡(
+Àn
+ > 0 && !
+l⁄ge°
+)
+
+434 
+‰om
+->
+n_Êags
+ &~
+NF_MARK
+;
+
+435  (
+l⁄ge°_Àn
+);
+
+436 
+	}
+}
+
+439 
+	$ußge
+()
+
+441 ()
+	`Ârötf
+(
+°dîr
+, "usage:Åsort [-lq] [file]\n");
+
+442 
+	`exô
+(1);
+
+443 
+	}
+}
+
+	@
+1
+.
+0
+1
+8
+tsort.c

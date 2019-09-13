@@ -1,0 +1,40 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BUF	tsort.c	/^} BUF;$/;"	t	typeref:struct:_buf	file:
+HASHSIZE	tsort.c	/^#define	HASHSIZE	/;"	d	file:
+NF_ACYCLIC	tsort.c	/^#define	NF_ACYCLIC	/;"	d	file:
+NF_MARK	tsort.c	/^#define	NF_MARK	/;"	d	file:
+NF_NODEST	tsort.c	/^#define	NF_NODEST	/;"	d	file:
+NODE	tsort.c	/^typedef struct node_str NODE;$/;"	t	typeref:struct:node_str	file:
+_buf	tsort.c	/^typedef struct _buf {$/;"	s	file:
+add_arc	tsort.c	/^add_arc(s1, s2)$/;"	f
+b_bsize	tsort.c	/^	int b_bsize;$/;"	m	struct:_buf	file:
+b_buf	tsort.c	/^	char *b_buf;$/;"	m	struct:_buf	file:
+clear_cycle	tsort.c	/^clear_cycle()$/;"	f
+cycle_buf	tsort.c	/^NODE *graph, **cycle_buf, **longest_cycle;$/;"	v
+db	tsort.c	/^DB *db;$/;"	v
+debug	tsort.c	/^int debug, longest, quiet;$/;"	v
+find_cycle	tsort.c	/^find_cycle(from, to, longest_len, depth)$/;"	f
+get_node	tsort.c	/^get_node(name)$/;"	f
+graph	tsort.c	/^NODE *graph, **cycle_buf, **longest_cycle;$/;"	v
+grow_buf	tsort.c	/^grow_buf(bp, size)$/;"	f
+longest	tsort.c	/^int debug, longest, quiet;$/;"	v
+longest_cycle	tsort.c	/^NODE *graph, **cycle_buf, **longest_cycle;$/;"	v
+main	tsort.c	/^main(argc, argv)$/;"	f
+n_arcs	tsort.c	/^	NODE **n_arcs;			\/* array of arcs to other nodes *\/$/;"	m	struct:node_str	file:
+n_arcsize	tsort.c	/^	int n_arcsize;			\/* size of n_arcs[] array *\/$/;"	m	struct:node_str	file:
+n_flags	tsort.c	/^	int n_flags;			\/* NF_* *\/$/;"	m	struct:node_str	file:
+n_name	tsort.c	/^	char n_name[1];			\/* name of this node *\/$/;"	m	struct:node_str	file:
+n_narcs	tsort.c	/^	int n_narcs;			\/* number of arcs in n_arcs[] *\/$/;"	m	struct:node_str	file:
+n_next	tsort.c	/^	NODE *n_next;			\/* next node in graph *\/$/;"	m	struct:node_str	file:
+n_prevp	tsort.c	/^	NODE **n_prevp;			\/* pointer to previous node's n_next *\/$/;"	m	struct:node_str	file:
+n_refcnt	tsort.c	/^	int n_refcnt;			\/* # of arcs pointing to this node *\/$/;"	m	struct:node_str	file:
+node_str	tsort.c	/^struct node_str {$/;"	s	file:
+quiet	tsort.c	/^int debug, longest, quiet;$/;"	v
+remove_node	tsort.c	/^remove_node(n)$/;"	f
+tsort	tsort.c	/^tsort()$/;"	f
+usage	tsort.c	/^usage()$/;"	f
