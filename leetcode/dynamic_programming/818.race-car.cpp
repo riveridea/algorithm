@@ -83,8 +83,7 @@ public:
             int m = 1, j = 1; //j's updated by m
             //for j < j
             for(; j < i; j = (1<<++m) - 1){
-                int q = 0, p = 0;
-                for(;p < j; p = (1<<++q)-1)
+                for(int q = 0, p = 0; p < j; p = (1<<++q)-1)
                     T[i] = min(T[i], m + q + 2 + T[i - j + p]);
             }
             //now j >= i
