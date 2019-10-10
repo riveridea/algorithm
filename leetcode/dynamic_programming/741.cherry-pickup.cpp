@@ -82,6 +82,36 @@
 class Solution {
 public:
     int cherryPickup(vector<vector<int>>& grid) {
-        
+        //this problem is pretty hard dynamic problem
+        //refer to the solution the explanation
+        //here a just add a little more about c1 and c2 range
+        int N = grid.size();
+        vector<vector<int>> dp(N, vector<int>(N, INT_MIN));
+        dp[0][0] = grid[0][0]; // not 0!
+
+        //for 1 ~ 2(N-1) steps
+        for(int t = 1; t <= 2*N -2; ++t){
+            //for each fixed step, update the temp dp
+            vector<vector<int>> tdp(N, vector<int>(N, INT_MIN));
+            
+            //  0 <= c <= N-1
+            //  0 <= t-c <= N-1   <=>   t -(N-1) <= c <= t
+            //    max(0, t-(N-1)) <= c <= min(N-1, t) 
+            for(int c1 = max(0, t-(N-1)); c1 <= min(N-1, t); ++c1){
+                for(int c2 = max(0, t-(N-1)); c2 <= min(N-1, t); ++c2){
+                    if(grid[c1][t-c1] == -1 || grid[c2][t-c2] == -1) continue;
+                    int val = grid[c1][t-c1];
+                    if(c1 != c2) val += grid[c2][t-c2];
+                    //updat from last step t-1, think about 4 possible last (c1,c2)
+                    for(int n1 = c1 - 1; n1 <= c1; ++n1)
+                        for(int n2 = c2 - 1; n2 <= c2; ++n2)
+                            if(n1 >= 0  && n2 >= 0) 
+                                tdp[c1][c2] = max(tdp[c1][c2], dp[n1][n2] + val);
+                } 
+            }
+            //update the dp for this step 
+            dp = tdp;
+        }
+        return max(0, dp[N-1][N-1]);
     }
 };
