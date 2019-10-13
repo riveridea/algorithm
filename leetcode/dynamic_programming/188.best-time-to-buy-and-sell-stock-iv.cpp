@@ -46,6 +46,7 @@ public:
 		    return maxPro;
         }
 
+/*
         vector<vector<int>> dp(k+1, vector<int>(m));
         for(int i = 1; i <= k; i++){
             int last_max = -prices[0]; //j == 0
@@ -56,5 +57,18 @@ public:
             }
         }
         return dp[k][m-1];
+*/
+ 
+        //1D dp
+        vector<int> dp(m);
+        for(int i = 0; i < k; i++){
+            int last_max = -prices[0];
+            for(int j = 1; j < m; j++){
+                int last_dpj = dp[j];
+                dp[j] = max(dp[j-1], prices[j] + last_max);
+                last_max = max(last_max, last_dpj -prices[j]);
+            }
+        }
+        return dp[m-1];
     }
 };
