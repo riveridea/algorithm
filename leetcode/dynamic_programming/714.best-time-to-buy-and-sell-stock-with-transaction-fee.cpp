@@ -49,9 +49,9 @@ public:
         //buy[0] = -prices[0];
         int sell = 0;
         for(int i = 1; i < n; i++){
-            int last_buy = buy;
-            buy = max(last_buy, sell - prices[i]);
-            sell = max(sell, last_buy + prices[i]-fee);
+            int last_sell = sell;
+            sell = max(sell, buy + prices[i]-fee);
+            buy = max(buy, last_sell - prices[i]);
         }
         return sell;
     }
