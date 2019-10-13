@@ -107,18 +107,20 @@ public:
             while(size--){
                 string curr = q.front();
                 q.pop();
-                if(curr == end) return level;
+                //if(curr == end) return level;
                 for(int i = 0; i < curr.size(); i++){
+                    string post = curr;
                     for(auto n: nexts[curr[i]]){
-                        string post = curr;
-                        post[i] = n;
-                        if(bank_set.find(post) != bank_set.end() &&
-                           v.find(post) == v.end())
+                        curr[i] = n;
+                        if(bank_set.find(curr) != bank_set.end() &&
+                           v.find(curr) == v.end())
                         {
-                            q.push(post);    
-                            v.insert(post);
+                            if(curr == end) return level+1; //put here to skip unessary push
+                            q.push(curr);    
+                            v.insert(curr);
                         }
                     }
+                    curr = post;
                 }
             }
             level++;
