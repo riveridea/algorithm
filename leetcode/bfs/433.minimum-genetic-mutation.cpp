@@ -107,7 +107,7 @@ public:
             while(size--){
                 string curr = q.front();
                 q.pop();
-                if(curr == end) return level+1;
+                if(curr == end) return level;
                 for(int i = 0; i < curr.size(); i++){
                     for(auto n: nexts[curr[i]]){
                         string post = curr;
