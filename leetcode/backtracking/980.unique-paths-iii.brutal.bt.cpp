@@ -101,18 +101,16 @@ public:
 	        }
 	    }
 
-		vector<vector<int>> v(m, vector<int>(n)); //memo to recording visited but maybe it is not necessary
-
 		//now we do recursive DFS, also need to backtracking 
-		dfs(grid, sx, sy, v);
+		dfs(grid, sx, sy);
 		return res;
+
     }
 private:
-	void dfs(vector<vector<int>>& grid, int x, int y,vector<vector<int>>&  v){
+	void dfs(vector<vector<int>>& grid, int x, int y){
 		if(x < 0 || y < 0 || x >= grid.size() || y >= grid[0].size() ||
 			grid[x][y] < 0) 
 			return;
-		if(v[x][y] < 0) return;
 		if(x == ex && y == ey){
 			if(empty == 0) res++;
 			return;
@@ -120,16 +118,12 @@ private:
 
 		//dfs to the nexts, remember backtracking after nexts are processed!!
 		grid[x][y] = -2;
-		v[x][y] = -2;
 		empty--;
-
-		dfs(grid, x, y+1, v);
-		dfs(grid, x, y-1, v);
-		dfs(grid, x-1, y, v);
-		dfs(grid, x+1, y, v);
-
+		dfs(grid, x, y+1);
+		dfs(grid, x, y-1);
+		dfs(grid, x-1, y);
+		dfs(grid, x+1, y);
 		grid[x][y] = 0;
-		v[x][y] = 0;
 		empty++;
 	}
 };
