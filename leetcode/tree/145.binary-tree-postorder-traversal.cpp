@@ -60,14 +60,14 @@ public:
             }
             else{
                 node = s.top();
-                if(!node->right || node->right == visited_node){
+                if(node->right && node->right != visited_node){
+                    node = node->right;
+                }
+                else{
                     result.push_back(node->val);
                     s.pop();
                     visited_node = node;
                     node = nullptr;
-                }
-                else{
-                    node = node->right;
                 }
             }
         }
