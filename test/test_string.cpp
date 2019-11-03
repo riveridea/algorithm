@@ -13,8 +13,8 @@ int delimit(const string& s, char d, vector<string>& result){
     while(ss.good()){
         string substr;
         getline(ss, substr, d);
-
-        result.push_back(substr);
+        if(substr != "") // skip the empty string
+            result.push_back(substr);
     }
     return result.size();
 }
@@ -33,12 +33,13 @@ int main(){
     if(delimit(input, ',', result) > 0)
         for(auto s : result){
             vector<string> strs;
-            if(delimit(s, ' ', strs) == 1)
+            int len = delimit(s, ' ', strs);
+            if(len == 1)
                 cout << s << endl;
-            else{
+            else if(len != 0){
                 cout << "[";
                 for(auto s1: strs){
-                    cout << s1 << " "; 
+                    cout << s1 << ","; 
                 }
                 cout << "]" << endl;
             }
